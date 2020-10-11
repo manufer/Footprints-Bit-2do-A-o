@@ -81,11 +81,11 @@ public class BlankFragment extends Fragment {
 
         mascotas = new ArrayList<Mascota>();
 
-        mascotas.add(new Mascota(R.drawable.dog1,"Gemma",0));
-        mascotas.add(new Mascota(R.drawable.dog1,"Gemma",0));
-        mascotas.add(new Mascota(R.drawable.dog1,"Gemma",0));
-        mascotas.add(new Mascota(R.drawable.dog1,"Gemma",0));
-        mascotas.add(new Mascota(R.drawable.dog1,"Gemma",0));
+        mascotas.add(new Mascota(R.drawable.dog1,"Facha",0));
+        mascotas.add(new Mascota(R.drawable.dog1,"Facha",0));
+        mascotas.add(new Mascota(R.drawable.dog1,"Facha",0));
+        mascotas.add(new Mascota(R.drawable.dog1,"Facha",0));
+        mascotas.add(new Mascota(R.drawable.dog1,"Facha",0));
 
     }
 }

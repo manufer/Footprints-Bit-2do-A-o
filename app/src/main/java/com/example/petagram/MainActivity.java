@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+
         toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         tabLayaout = (TabLayout) findViewById(R.id.tabLayout);
@@ -39,11 +39,13 @@ public class MainActivity extends AppCompatActivity {
         setUpViewPager();
         setToolBar();
 
+
         if (toolbar != null){
             setSupportActionBar(toolbar);
         }
 
-        }
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -60,6 +62,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 return true;
 
+            case R.id.contacto:
+                Intent intentContacto = new Intent(MainActivity.this, Contacto.class);
+                startActivity(intentContacto);
+                return true;
+
+            case R.id.acercaDe:
+                Intent intentAcercaDe = new Intent(MainActivity.this, AcercaDe.class);
+                startActivity(intentAcercaDe);
+                return true;
+
             default:
                 final boolean b = super.onOptionsItemSelected(item);
                 return b;
@@ -68,14 +80,17 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Fragment> agregarFragments(){
         ArrayList<Fragment> fragments = new ArrayList<>();
+
         fragments.add(new RecyclerViewFragment());
         fragments.add(new BlankFragment());
+
         return fragments;
     }
 
     private void setUpViewPager(){
         viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(), agregarFragments()));
         tabLayaout.setupWithViewPager(viewPager);
+
     }
 
     public void setToolBar(){
