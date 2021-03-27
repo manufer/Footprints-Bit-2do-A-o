@@ -10,8 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.text.BreakIterator;
-
 public class RegistroUsuarios extends AppCompatActivity {
 
     EditText nombre_usuario;
@@ -21,12 +19,10 @@ public class RegistroUsuarios extends AppCompatActivity {
     EditText telefono;
     Button confirmar;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registro_usuarios);
+        setContentView(R.layout.activity_main);
 
         nombre_usuario = findViewById(R.id.nombre_usuario);
         email = findViewById(R.id.email);
@@ -62,15 +58,16 @@ public class RegistroUsuarios extends AppCompatActivity {
             contrasena.setError("¡Ingrese un una contraseña válida!");
         }
 
+        if (isEmpty(confContrasena)) {
+            confContrasena.setError("¡Ingrese un una contraseña válida!");
+        }
+
+
         if (!isEmail(email)) {
             email.setError("¡Ingrese un email valido!");
         }
 
-        if (!isEmail(telefono)) {
-            telefono.setError("¡Ingrese un número válido!");
-        }
     }
-
 }
 
 
