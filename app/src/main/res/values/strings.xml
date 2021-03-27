@@ -31,5 +31,6 @@
     <string name="Email">Email</string>
     <string name="registro">REGISTRO</string>
     <string name="login">LOGIN</string>
+    <string name="RetornoLogin">VolverLogin</string>
 
 </resources>

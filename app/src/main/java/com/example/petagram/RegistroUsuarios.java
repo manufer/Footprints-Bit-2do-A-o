@@ -19,6 +19,8 @@ public class RegistroUsuarios extends AppCompatActivity {
     EditText telefono;
     Button confirmar;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +64,10 @@ public class RegistroUsuarios extends AppCompatActivity {
             confContrasena.setError("¡Ingrese un una contraseña válida!");
         }
 
+        if (isEmpty(telefono)) {
+            telefono.setError("¡Ingrese un número válida!");
+        }
+
 
         if (!isEmail(email)) {
             email.setError("¡Ingrese un email valido!");
@@ -69,7 +75,6 @@ public class RegistroUsuarios extends AppCompatActivity {
 
     }
 }
-
 
 
 
