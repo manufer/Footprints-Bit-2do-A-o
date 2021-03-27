@@ -24,10 +24,12 @@
     <string name="email">E-mail</string>
     <string name="nombre_del_usuario">Nombre de usuario</string>
     <string name="registrarse">Registro</string>
-    <string name="Registro_exitoso">Ya tienes cuenta? Accede!</string>
+    <string name="RetornoLogin">Ya tienes cuenta? Accede!</string>
     <string name="enviar">enviar</string>
     <string name="registrate">registrate!</string>
     <string name="password">Password</string>
     <string name="Email">Email</string>
+    <string name="registro">REGISTRO</string>
+    <string name="login">LOGIN</string>
 
 </resources>

@@ -4,19 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dip"
     android:orientation="vertical"
+    android:padding="20dip"
+    android:paddingTop="20dp"
     tools:context=".RegistroUsuarios">
 
 
     <LinearLayout
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <TextView
             android:id="@+id/textView"
@@ -28,7 +34,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
         <EditText
-            android:id="@+id/PersonName"
+            android:id="@+id/nombre_usuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -40,7 +46,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/EmailAddress"
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -51,7 +57,7 @@
             android:inputType="textEmailAddress" />
 
         <EditText
-            android:id="@+id/Password"
+            android:id="@+id/contrasena"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -62,7 +68,7 @@
             android:inputType="textPassword" />
 
         <EditText
-            android:id="@+id/ConfPassword"
+            android:id="@+id/confContrasena"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -73,49 +79,48 @@
             android:inputType="textPassword" />
 
         <EditText
-            android:id="@+id/Phone"
+            android:id="@+id/telefono"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dip"
             android:autofillHints=""
             android:ems="10"
             android:gravity="center_horizontal"
-            android:layout_marginBottom="30dip"
             android:hint="@string/telefono"
             android:inputType="phone" />
 
+
         <Button
-            android:id="@+id/btnRegistro"
+            android:id="@+id/confirmar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="58dp"
             android:layout_marginTop="30dp"
             android:text="@string/confirmar" />
 
-
         <TextView
             android:id="@+id/link_to_login"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
             android:layout_marginTop="40dip"
-            android:layout_marginBottom="40dip"
+            android:layout_marginBottom="16dip"
             android:gravity="center"
-            android:text="@string/Registro_exitoso"
+            android:text="@string/RetornoLogin"
             android:textColor="#0b84aa"
             android:textSize="20sp" />
 
-        <TextView android:id="@+id/register_error"
+        <TextView
+            android:id="@+id/register_error"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dip"
             android:layout_marginBottom="40dip"
 
             android:gravity="center"
-            android:textSize="20sp"
-            android:textColor="#0b84aa"/>
+            android:textColor="#0b84aa"
+            android:textSize="20sp" />
 
     </LinearLayout>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
