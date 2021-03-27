@@ -66,7 +66,11 @@ public class RegistroUsuarios extends AppCompatActivity {
             email.setError("¡Ingrese un email valido!");
         }
 
+        if (!isEmail(telefono)) {
+            telefono.setError("¡Ingrese un número válido!");
+        }
     }
+
 }
 
 
