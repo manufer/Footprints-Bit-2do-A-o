@@ -2,6 +2,7 @@ package com.example.petagram;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
@@ -20,60 +21,70 @@ public class RegistroUsuarios extends AppCompatActivity {
     Button confirmar;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        super.onCreate (savedInstanceState);
+        setContentView (R.layout.activity_registro_usuarios);
 
-        nombre_usuario = findViewById(R.id.nombre_usuario);
-        email = findViewById(R.id.email);
-        contrasena = findViewById(R.id.contrasena);
-        confContrasena = findViewById(R.id.confContrasena);
-        confirmar = findViewById(R.id.confirmar);
+        nombre_usuario = findViewById (R.id.nombre_usuario);
+        email = findViewById (R.id.email);
+        contrasena = findViewById (R.id.contrasena);
+        confContrasena = findViewById (R.id.confContrasena);
+        telefono = findViewById (R.id.telefono);
+        confirmar = findViewById (R.id.confirmar);
 
-        confirmar.setOnClickListener(new View.OnClickListener() {
+        confirmar.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                checkDataEntered();
+                Confirmar();
             }
         });
     }
 
     boolean isEmail(EditText text) {
-        CharSequence email = text.getText().toString();
-        return (!TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches());
+        CharSequence email = text.getText ().toString ();
+        return (!TextUtils.isEmpty (email) && Patterns.EMAIL_ADDRESS.matcher (email).matches ());
     }
 
     boolean isEmpty(EditText text) {
-        CharSequence str = text.getText().toString();
-        return TextUtils.isEmpty(str);
+        CharSequence str = text.getText ().toString ();
+        return TextUtils.isEmpty (str);
     }
 
-    void checkDataEntered() {
-        if (isEmpty(nombre_usuario)) {
-            Toast t = Toast.makeText(this, "¡Debe ingresar el nombre para registrarse!", Toast.LENGTH_SHORT);
-            t.show();
+    void Confirmar() {
+        if (isEmpty (nombre_usuario)) {
+            Toast t = Toast.makeText (this, "¡Debe ingresar el nombre para registrarse!", Toast.LENGTH_SHORT);
+            t.show ();
         }
 
-        if (isEmpty(contrasena)) {
-            contrasena.setError("¡Ingrese un una contraseña válida!");
+        if (!isEmail (email)) {
+            email.setError ("¡Ingrese un email valido!");
         }
 
-        if (isEmpty(confContrasena)) {
-            confContrasena.setError("¡Ingrese un una contraseña válida!");
+        if (isEmpty (contrasena)) {
+            contrasena.setError ("¡Ingrese un una contraseña válida!");
         }
 
-        if (isEmpty(telefono)) {
-            telefono.setError("¡Ingrese un número válida!");
+        if (isEmpty (confContrasena)) {
+            confContrasena.setError ("¡Ingrese un una contraseña válida!");
+        }
+
+        if (isEmpty (telefono)) {
+            telefono.setError ("¡Ingrese un número válida!");
         }
 
 
-        if (!isEmail(email)) {
-            email.setError("¡Ingrese un email valido!");
-        }
+
 
     }
+
+
+    public void Volver (View view){
+        Intent intent = new Intent (RegistroUsuarios.this, LoginActivity.class);
+        startActivity (intent);
+    }
+
+
 }
 
 
